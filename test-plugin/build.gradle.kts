@@ -2,6 +2,7 @@ version = "1.0.0-SNAPSHOT"
 
 dependencies {
     compileOnly(project(":paper-api"))
+    compileOnly(project(":paper-server"))
 }
 
 tasks.processResources {
@@ -14,7 +15,7 @@ tasks.processResources {
         "apiversion" to "\"$apiVersion\"",
     )
     inputs.properties(props)
-    filesMatching("paper-plugin.yml") {
+    filesMatching("plugin.yml") {
         expand(props)
     }
 }
